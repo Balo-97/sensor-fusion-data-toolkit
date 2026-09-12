@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-09-10",
+  "purpose": "Small, independently verified samples from three named public datasets for metadata extraction smoke/regression tests; these are not representative full-dataset evaluations.",
+  "datasets": [
+    {
+      "id": "comma2k19",
+      "title": "comma2k19 public example segment",
+      "source_url": "https://github.com/commaai/comma2k19/tree/4c7f1a6e1957745beadc1def0e7225f559b09a2a",
+      "license": "MIT",
+      "license_url": "https://github.com/commaai/comma2k19/blob/4c7f1a6e1957745beadc1def0e7225f559b09a2a/LICENSE",
+      "attribution": "Copyright (c) 2018 comma.ai. Schafer et al., A Commute in Data: The comma2k19 Dataset (2018), https://arxiv.org/abs/1812.05752.",
+      "scope": "One original preview PNG: first video frame from the official one-minute example segment, route b0c9d2329ad1606b|2018-08-02--08-34-47, segment 40. Not the full dataset or a driving performance benchmark.",
+      "revision": "4c7f1a6e1957745beadc1def0e7225f559b09a2a",
+      "files": [
+        {
+          "path": "preview.png",
+          "url": "https://raw.githubusercontent.com/commaai/comma2k19/4c7f1a6e1957745beadc1def0e7225f559b09a2a/Example_1/b0c9d2329ad1606b%7C2018-08-02--08-34-47/40/preview.png",
+          "sha256": "88a6f0e4d1ebfd4ad98f99287a3026187bf95b487356817b1fe541851bb69970",
+          "size_bytes": 496734,
+          "expected": {
+            "width": 1164,
+            "height": 874,
+            "bit_depth": 8,
+            "format": "PNG",
+            "mode": "RGB"
+          },
+          "verification": "Full HTTP 200 GET; SHA-256 over downloaded original bytes. PNG values read directly from IHDR; CSV values counted using stdlib csv; PCAP values parsed independently from file and Ethernet/IPv4/UDP headers.",
+          "verified_at": "2026-09-10",
+          "local_probe_path": "research/dataset-probes/comma2k19/preview.png"
+        }
+      ]
+    },
+    {
+      "id": "udacity",
+      "title": "Udacity self-driving car public data",
+      "source_url": "https://github.com/udacity/self-driving-car/tree/aa7fe7a77d397de27bf8d2ce0e48576337b162f0/annotations",
+      "license": "MIT (dataset files)",
+      "license_url": "https://github.com/udacity/self-driving-car/blob/aa7fe7a77d397de27bf8d2ce0e48576337b162f0/LICENSE.md",
+      "attribution": "Copyright (c) 2016 Udacity. CrowdAI annotated the driving labels. MIT notice at datasets/LICENSE.md; root LICENSE.md explicitly assigns datasets to MIT.",
+      "scope": "Complete corrected CrowdAI annotation CSV from the official repository (72,064 data rows, 7 columns), plus one original right-camera calibration PNG. The image archive and driving videos are not downloaded.",
+      "revision": "aa7fe7a77d397de27bf8d2ce0e48576337b162f0",
+      "files": [
+        {
+          "path": "calibration-0000.png",
+          "url": "https://raw.githubusercontent.com/udacity/self-driving-car/aa7fe7a77d397de27bf8d2ce0e48576337b162f0/sensor-info/camera-calibration/right-camera/left-0000.png",
+          "sha256": "86867f97a52b7c67baf91a9086514033d93b9c94d809f57c81ce2c5abf4d2923",
+          "size_bytes": 119893,
+          "expected": {
+            "width": 640,
+            "height": 480,
+            "bit_depth": 8,
+            "format": "PNG",
+            "mode": "L"
+          },
+          "verification": "Full HTTP 200 GET; SHA-256 over downloaded original bytes. PNG values read directly from IHDR; CSV values counted using stdlib csv; PCAP values parsed independently from file and Ethernet/IPv4/UDP headers.",
+          "verified_at": "2026-09-10",
+          "local_probe_path": "research/dataset-probes/udacity/calibration-0000.png"
+        },
+        {
+          "path": "labels_crowdai.csv",
+          "url": "https://raw.githubusercontent.com/udacity/self-driving-car/aa7fe7a77d397de27bf8d2ce0e48576337b162f0/annotations/labels_crowdai.csv",
+          "sha256": "a27db5e7691a6ebd2693548d549e948e5fdd4dded4a28cf37641ac65a9933631",
+          "size_bytes": 7156250,
+          "expected": {
+            "headers": [
+              "xmin",
+              "ymin",
+              "xmax",
+              "ymax",
+              "Frame",
+              "Label",
+              "Preview URL"
+            ],
+            "columns": 7,
+            "rows": 72064,
+            "csv.row_count": 72064,
+            "csv.column_count": 7,
+            "csv.sample_limited": false
+          },
+          "verification": "Full HTTP 200 GET; SHA-256 over downloaded original bytes. PNG values read directly from IHDR; CSV values counted using stdlib csv; PCAP values parsed independently from file and Ethernet/IPv4/UDP headers.",
+          "verified_at": "2026-09-10",
+          "local_probe_path": "research/dataset-probes/udacity/labels_crowdai.csv"
+        }
+      ]
+    },
+    {
+      "id": "a2d2",
+      "title": "A2D2 Audi Autonomous Driving Dataset",
+      "source_url": "https://registry.opendata.aws/aev-a2d2/",
+      "license": "CC BY-ND 4.0",
+      "license_url": "https://audi-autonomous-driving-dataset.s3.eu-central-1.amazonaws.com/LICENSE.txt",
+      "attribution": "Audi Electronics Venture GmbH; Geyer et al., A2D2: Audi Autonomous Driving Dataset (2020), https://arxiv.org/abs/2004.06320. Accessed 2026-09-10 from the AWS Open Data extracted per-file mirror.",
+      "scope": "Two consecutive original front-center PNG frames and their original JSON metadata sidecars from sequence 20180810_150607 (frames 60 and 61). Files are unmodified; no full sequence or derived image download.",
+      "revision": "S3 public object keys pinned by SHA-256 in this manifest",
+      "files": [
+        {
+          "path": "20180810150607_camera_frontcenter_000000060.png",
+          "url": "https://audi-autonomous-driving-dataset.s3.eu-central-1.amazonaws.com/camera_lidar/20180810_150607/camera/cam_front_center/20180810150607_camera_frontcenter_000000060.png",
+          "sha256": "3fa708f1806dacf7778603a3af2f4b707bedbeeb2eed5cc1d750199e9fe08233",
+          "size_bytes": 3242588,
+          "expected": {
+            "width": 1920,
+            "height": 1208,
+            "bit_depth": 8,
+            "format": "PNG",
+            "mode": "RGB"
+          },
+          "verification": "Full HTTP 200 GET; SHA-256 over downloaded original bytes. PNG values read directly from IHDR; CSV values counted using stdlib csv; PCAP values parsed independently from file and Ethernet/IPv4/UDP headers.",
+          "verified_at": "2026-09-10",
+          "local_probe_path": "research/dataset-probes/a2d2/20180810150607_camera_frontcenter_000000060.png"
+        },
+        {
+          "path": "20180810150607_camera_frontcenter_000000060.json",
+          "url": "https://audi-autonomous-driving-dataset.s3.eu-central-1.amazonaws.com/camera_lidar/20180810_150607/camera/cam_front_center/20180810150607_camera_frontcenter_000000060.json",
+          "sha256": "7c40397392de3b0870b802b71b29aedcdd6b4ec795756c7d14da2d2ec41fe181",
+          "size_bytes": 805,
+          "expected": {
+            "json.recognized_schema": "a2d2-frame-sidecar",
+            "calibration.status": "ok",
+            "calibration.camera_name": "front_center"
+          },
+          "verification": "Full HTTP 200 GET; SHA-256 over downloaded original bytes. PNG values read directly from IHDR; CSV values counted using stdlib csv; PCAP values parsed independently from file and Ethernet/IPv4/UDP headers.",
+          "verified_at": "2026-09-10",
+          "local_probe_path": "research/dataset-probes/a2d2/20180810150607_camera_frontcenter_000000060.json",
+          "source_metadata": {
+            "cam_tstamp": 1533906414722153,
+            "cam_name": "front_center",
+            "image_zoom": 1.0,
+            "image_png": "20180810150607_camera_frontcenter_000000060.png",
+            "pcld_npz": "20180810150607_lidar_frontcenter_000000060.npz",
+            "pcld_view": {
+              "origin": [
+                1.711045726422736,
+                -5.735179668849011e-09,
+                0.9431449279047172
+              ],
+              "x-axis": [
+                0.9997595802751106,
+                0.021372184646008877,
+                -0.004900139956328717
+              ],
+              "y-axis": [
+                -0.021482638328964472,
+                0.9994877740097232,
+                -0.02372100030596073
+              ]
+            },
+            "lidar_ids": {
+              "0": "front_center",
+              "1": "front_left",
+              "2": "front_right",
+              "3": "rear_left",
+              "4": "rear_right"
+            }
+          }
+        },
+        {
+          "path": "20180810150607_camera_frontcenter_000000061.png",
+          "url": "https://audi-autonomous-driving-dataset.s3.eu-central-1.amazonaws.com/camera_lidar/20180810_150607/camera/cam_front_center/20180810150607_camera_frontcenter_000000061.png",
+          "sha256": "e73c60152e1d96a144fabf7e229b1fa4077d5048f555f37b4e1af40f3b7a88b7",
+          "size_bytes": 3240160,
+          "expected": {
+            "width": 1920,
+            "height": 1208,
+            "bit_depth": 8,
+            "format": "PNG",
+            "mode": "RGB"
+          },
+          "verification": "Full HTTP 200 GET; SHA-256 over downloaded original bytes. PNG values read directly from IHDR; CSV values counted using stdlib csv; PCAP values parsed independently from file and Ethernet/IPv4/UDP headers.",
+          "verified_at": "2026-09-10",
+          "local_probe_path": "research/dataset-probes/a2d2/20180810150607_camera_frontcenter_000000061.png"
+        },
+        {
+          "path": "20180810150607_camera_frontcenter_000000061.json",
+          "url": "https://audi-autonomous-driving-dataset.s3.eu-central-1.amazonaws.com/camera_lidar/20180810_150607/camera/cam_front_center/20180810150607_camera_frontcenter_000000061.json",
+          "sha256": "ea6b99aabc516a667901d7c3601b459bd17c82ce2f048cf93ba67216accc60bc",
+          "size_bytes": 805,
+          "expected": {
+            "json.recognized_schema": "a2d2-frame-sidecar",
+            "calibration.status": "ok",
+            "calibration.camera_name": "front_center"
+          },
+          "verification": "Full HTTP 200 GET; SHA-256 over downloaded original bytes. PNG values read directly from IHDR; CSV values counted using stdlib csv; PCAP values parsed independently from file and Ethernet/IPv4/UDP headers.",
+          "verified_at": "2026-09-10",
+          "local_probe_path": "research/dataset-probes/a2d2/20180810150607_camera_frontcenter_000000061.json",
+          "source_metadata": {
+            "cam_tstamp": 1533906414755490,
+            "cam_name": "front_center",
+            "image_zoom": 1.0,
+            "image_png": "20180810150607_camera_frontcenter_000000061.png",
+            "pcld_npz": "20180810150607_lidar_frontcenter_000000061.npz",
+            "pcld_view": {
+              "origin": [
+                1.711045726422736,
+                -5.735179668849011e-09,
+                0.9431449279047172
+              ],
+              "x-axis": [
+                0.9997595802751106,
+                0.021372184646008877,
+                -0.004900139956328717
+              ],
+              "y-axis": [
+                -0.021482638328964472,
+                0.9994877740097232,
+                -0.02372100030596073
+              ]
+            },
+            "lidar_ids": {
+              "0": "front_center",
+              "1": "front_left",
+              "2": "front_right",
+              "3": "rear_left",
+              "4": "rear_right"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "optional_fixtures": [
+    {
+      "id": "velodyne-vlp16-fixture",
+      "title": "Velodyne VLP-16 PCAP decoder test recording",
+      "source_url": "https://github.com/valgur/velodyne_decoder/blob/08ddf97f6b7a69016d5997eea04a43ec2635c655/test/conftest.py",
+      "license": "Repository BSD-3-Clause; release fixture has no separate data license notice",
+      "license_url": "https://github.com/valgur/velodyne_decoder/blob/08ddf97f6b7a69016d5997eea04a43ec2635c655/LICENSE",
+      "scope": "Optional 8.97 MB actual PCAP recording for sensor-format smoke testing; do not count as an independent named driving dataset. Upstream test reports 94 decoded scans.",
+      "files": [
+        {
+          "path": "vlp16.pcap",
+          "url": "https://github.com/valgur/velodyne_decoder/releases/download/v1.0.1/vlp16.pcap",
+          "sha256": "84727cd4645ec78bd8a1bb270447d70e9e6c61bf6c726d7d040c81c5c8ca12a6",
+          "size_bytes": 8965576,
+          "expected": {
+            "pcap_version": "2.4",
+            "link_type": 1,
+            "packet_count": 7093,
+            "velodyne_packet_count": 7093,
+            "first_packet_timestamp": 1427759049.158682,
+            "last_packet_timestamp": 1427759058.570375,
+            "first_velodyne_packet": {
+              "source_address": "192.168.1.201",
+              "destination_address": "192.168.1.255",
+              "source_port": 2368,
+              "destination_port": 2368,
+              "udp_length": 1214,
+              "return_mode": 55,
+              "product_id": 33,
+              "first_azimuth_hundredths": 33658
+            },
+            "all_return_modes": [
+              55
+            ],
+            "all_product_ids": [
+              33
+            ]
+          },
+          "verification": "Full HTTP 200 GET; SHA-256 over downloaded original bytes. PNG values read directly from IHDR; CSV values counted using stdlib csv; PCAP values parsed independently from file and Ethernet/IPv4/UDP headers.",
+          "verified_at": "2026-09-10",
+          "local_probe_path": "research/dataset-probes/velodyne/vlp16.pcap"
+        }
+      ]
+    }
+  ],
+  "dataset_download_bytes": 14257235,
+  "optional_fixture_download_bytes": 8965576
+}
