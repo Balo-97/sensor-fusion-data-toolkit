@@ -1,0 +1,14 @@
+{
+  "Ego Vehicle": {
+    "Ego longitudinal activity": ["keep velocity"],
+    "Ego lateral activity": ["follow lane"]
+  },
+  "Target Vehicle #1": {
+    "Target start position": {"same lane": ["front"]},
+    "Target end position": {"same lane": ["front"]},
+    "Target behavior": {
+      "target longitudinal activity": ["keep velocity"],
+      "target lateral activity": ["follow lane"]
+    }
+  }
+}

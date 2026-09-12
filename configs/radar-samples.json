@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "datasets": [
+    {
+      "id": "astyx-radar-sample",
+      "title": "Astyx HiRes2019 radar and calibration sample",
+      "source_url": "https://github.com/under-the-radar/radar_dataset_astyx/tree/2310e7f35a4f2b76de85463f0dd1b0b4e50c2f69",
+      "license": "CC BY-NC-SA 4.0; Copyright 2019 Astyx GmbH",
+      "license_url": "https://raw.githubusercontent.com/under-the-radar/radar_dataset_astyx/2310e7f35a4f2b76de85463f0dd1b0b4e50c2f69/license.txt",
+      "scope": "Three original radar frames and corresponding calibration JSON from a public GitHub copy; not the full dataset or a temporal scenario-mining benchmark.",
+      "revision": "2310e7f35a4f2b76de85463f0dd1b0b4e50c2f69",
+      "files": [
+        {
+          "path": "radar_6455/000000.txt",
+          "url": "https://raw.githubusercontent.com/under-the-radar/radar_dataset_astyx/2310e7f35a4f2b76de85463f0dd1b0b4e50c2f69/dataset_astyx_hires2019/radar_6455/000000.txt",
+          "sha256": "a27a90c3c21114dd9d7eb42ba0d182147f1db6a2994299e3038d039e697ea8e7",
+          "size_bytes": 65549,
+          "expected": {
+            "radar.detection_count": 831,
+            "radar.column_count": 5,
+            "radar.sample_limited": false
+          },
+          "related_files": {
+            "calibration": "calibration/000000.json"
+          }
+        },
+        {
+          "path": "calibration/000000.json",
+          "url": "https://raw.githubusercontent.com/under-the-radar/radar_dataset_astyx/2310e7f35a4f2b76de85463f0dd1b0b4e50c2f69/dataset_astyx_hires2019/calibration/000000.json",
+          "sha256": "34d1e3d5bab8ffdcddae7e52141d585f67f0a8226698398f4288e51de7cd221d",
+          "size_bytes": 3181,
+          "expected": {
+            "calibration.schema": "astyx-calibration",
+            "calibration.sensor_count": 3,
+            "calibration.status": "ok"
+          },
+          "related_files": {}
+        },
+        {
+          "path": "radar_6455/000001.txt",
+          "url": "https://raw.githubusercontent.com/under-the-radar/radar_dataset_astyx/2310e7f35a4f2b76de85463f0dd1b0b4e50c2f69/dataset_astyx_hires2019/radar_6455/000001.txt",
+          "sha256": "c128d027d2eda89ad1494223d5546041f468f4cae6a95470f665e162a697d54a",
+          "size_bytes": 67385,
+          "expected": {
+            "radar.detection_count": 855,
+            "radar.column_count": 5,
+            "radar.sample_limited": false
+          },
+          "related_files": {
+            "calibration": "calibration/000001.json"
+          }
+        },
+        {
+          "path": "calibration/000001.json",
+          "url": "https://raw.githubusercontent.com/under-the-radar/radar_dataset_astyx/2310e7f35a4f2b76de85463f0dd1b0b4e50c2f69/dataset_astyx_hires2019/calibration/000001.json",
+          "sha256": "34d1e3d5bab8ffdcddae7e52141d585f67f0a8226698398f4288e51de7cd221d",
+          "size_bytes": 3181,
+          "expected": {
+            "calibration.schema": "astyx-calibration",
+            "calibration.sensor_count": 3,
+            "calibration.status": "ok"
+          },
+          "related_files": {}
+        },
+        {
+          "path": "radar_6455/000002.txt",
+          "url": "https://raw.githubusercontent.com/under-the-radar/radar_dataset_astyx/2310e7f35a4f2b76de85463f0dd1b0b4e50c2f69/dataset_astyx_hires2019/radar_6455/000002.txt",
+          "sha256": "c11aedc2048196b7c319e240126d7622ab1e96a9d0bbd3faf3286c40c9b5a6cf",
+          "size_bytes": 76808,
+          "expected": {
+            "radar.detection_count": 890,
+            "radar.column_count": 5,
+            "radar.sample_limited": false
+          },
+          "related_files": {
+            "calibration": "calibration/000002.json"
+          }
+        },
+        {
+          "path": "calibration/000002.json",
+          "url": "https://raw.githubusercontent.com/under-the-radar/radar_dataset_astyx/2310e7f35a4f2b76de85463f0dd1b0b4e50c2f69/dataset_astyx_hires2019/calibration/000002.json",
+          "sha256": "34d1e3d5bab8ffdcddae7e52141d585f67f0a8226698398f4288e51de7cd221d",
+          "size_bytes": 3181,
+          "expected": {
+            "calibration.schema": "astyx-calibration",
+            "calibration.sensor_count": 3,
+            "calibration.status": "ok"
+          },
+          "related_files": {}
+        },
+        {
+          "path": "LICENSE.txt",
+          "url": "https://raw.githubusercontent.com/under-the-radar/radar_dataset_astyx/2310e7f35a4f2b76de85463f0dd1b0b4e50c2f69/license.txt",
+          "sha256": "4b81d63546bd451eaceede07aea8e09d398d42067259fa1499becda254b49969",
+          "size_bytes": 164,
+          "expected": {}
+        }
+      ]
+    }
+  ]
+}
