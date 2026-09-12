@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scenario-metadata-pipeline"
+version = "0.1.0"
+description = "Public camera, LiDAR and radar acquisition, metadata, CSV exports and Chat2Scenario integration"
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+dependencies = ["Pillow>=10,<13"]
+
+[project.urls]
+Repository = "https://github.com/Balo-97/sensor-fusion-data-toolkit"
+Issues = "https://github.com/Balo-97/sensor-fusion-data-toolkit/issues"
+
+[project.optional-dependencies]
+a2d2 = ["numpy>=1.26,<3"]
+radarscenes = ["h5py>=3.11,<4", "numpy>=1.26,<3"]
+mining = ["pandas>=2.2,<3", "numpy>=1.26,<3", "matplotlib>=3.8,<4", "scipy>=1.13,<2", "streamlit>=1.32,<2", "tqdm>=4.66,<5", "scenariogeneration==0.14.4", "shapely>=2,<3", "sympy>=1.12,<2", "openai>=1.58,<4"]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+scenario-metadata = "scenario_metadata.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+scenario_metadata = ["datasets.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["integration: executes pinned upstream Chat2Scenario code locally; no API calls"]
